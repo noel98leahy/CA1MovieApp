@@ -9,7 +9,7 @@ import Fab from "@material-ui/core/Fab";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-
+import ShowReviews from "../tvReviews"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,9 +86,9 @@ const ShowDetails = ({ show }) => {  // Don't miss this!
         <NavigationIcon />
         Reviews
       </Fab>
-      {/* <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <showReviews show={show} />
-      </Drawer> */}
+      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <ShowReviews show={show} />
+      </Drawer>
     </>
   );
 };

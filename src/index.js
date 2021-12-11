@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import MovieReviewPage from "./pages/movieReviewPage";
-import SiteHeader from './components/siteHeader'
+import TVReviewPage from "./pages/showReviewPage";
+import SiteHeader from './components/siteHeader';
 import UpComingMoviePage from "./pages/upComingMoviesPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import { QueryClientProvider, QueryClient } from "react-query";
@@ -12,7 +13,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import TvPage from './pages/tvPages';
-import TvDetailsPage from './pages/tvDetailsPage'
+import TvDetailsPage from './pages/tvDetailsPage';
 
 
 
@@ -43,6 +44,7 @@ const App = () => {
       <Route exact path="/movies/:id" component={MoviePage} />
       <Route exact path="/shows" component={TvPage}/>
       <Route exact path="/shows/:id" component={TvDetailsPage} />
+      <Route path="/tvReviews/:id" component={TVReviewPage} />
       <Redirect from="*" to="/" />
       </Switch>
       </MoviesContextProvider>
