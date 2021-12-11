@@ -89,7 +89,42 @@ const ShowDetails = ({ show }) => {  // Don't miss this!
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <ShowReviews show={show} />
       </Drawer>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <hr></hr>
+
+      <Paper component="ul" className={classes.root}>
+        {show.seasons.map((g) => (
+        <><li key={g.name}>
+            <Chip label={g.name} className={classes.chip} color="primary" />
+            <Typography variant="h6" component="h3">
+              Overview of Season
+            </Typography>
+          
+              <Typography variant="h9" component="p">
+                <p><b>Episode Count: </b>{g.episode_count}
+                <br></br><b>Air Date: </b></p>{g.air_date}
+            
+              </Typography>
+           
+            <Typography variant="h9" component="p">
+              <p>{g.overview}</p>
+            </Typography>
+            </li>
+            
+              </>
+
+          
+        ))}
+        
+
+        
+      </Paper>
     </>
+
+    
   );
 };
 export default  ShowDetails;

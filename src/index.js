@@ -18,6 +18,7 @@ import TvDetailsPage from './pages/tvDetailsPage';
 
 
 
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

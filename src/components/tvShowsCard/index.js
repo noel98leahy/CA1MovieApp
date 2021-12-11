@@ -12,26 +12,28 @@ import StarRateIcon from "@material-ui/icons/StarRate";
 import Grid from "@material-ui/core/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
-
+import Avatar from "@material-ui/core/Avatar";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const useStyles = makeStyles({
   card: { maxWidth: 345 },
   media: { height: 500 },
-  avatar: {
-    backgroundColor: "rgb(255, 0, 0)",
-  },
 });
 
 export default function TvCard({ show, action }) {
   const classes = useStyles();
-  
 
   return (
     <Card className={classes.card}>
       <CardHeader
       className={classes.header}
-      avatar= {null}
-      
+      avatar={
+        show.favorite ? (
+          <Avatar className={classes.avatar}>
+            <FavoriteIcon />
+          </Avatar>
+        ) : null
+        }
       title={
         <Typography variant="h5" component="p">
           {show.name}{" "}
@@ -63,10 +65,8 @@ export default function TvCard({ show, action }) {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-      {action(show)}
       
         <Link to={`/shows/${show.id}`}>
-          {/* redirected to home */}
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>

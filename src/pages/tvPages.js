@@ -2,7 +2,6 @@ import React from "react";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import { getTVShows } from "../api/tmdb-api";
-import AddToPlaylistIcon from "../components/cardIcons/addToPlaylist";
 import PageTemplate from "../components/templateTvListPage";
 
 const TvPage = (props) => {
@@ -19,17 +18,13 @@ const TvPage = (props) => {
   console.log(shows);
 
   // Redundant, but necessary to avoid app crashing.
-  const playlists = shows.filter(m => m.playlists)
-  localStorage.setItem('playlists', JSON.stringify(playlists))
-  const addToPlaylist = (playlists) => true 
+  const tvFavorites = shows.filter(m => m.favorite)
+  localStorage.setItem('favorites', JSON.stringify(tvFavorites))
 
   return (
     <PageTemplate
       title="Tv Shows"
       shows={shows}
-      action={(show) => {
-        return <AddToPlaylistIcon show={show} />
-      }}
     />
   );
 };
