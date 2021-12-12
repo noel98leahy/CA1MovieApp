@@ -80,7 +80,7 @@ describe("Navigation", () => {
       cy.get("button[aria-label='go back'").click();
       cy.get("h3").contains("Discover Movies");
       cy.url().should("not.include", `/movies/${movies[0].id}`);
-      cy.get("button[aria-label='go forward'").eq(1).click();
+      cy.get("button[aria-label='go forward'").eq(0).click();
       cy.url().should("include", `/movies/${movies[0].id}`);
       cy.get("h3").contains(movies[0].title);
     });
