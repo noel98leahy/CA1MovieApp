@@ -34,6 +34,16 @@ const ShowDetails = ({ show }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+
+  const handleOverview = (overview) => {
+    if(overview.trim() == ""){
+      return "No Overview was given"
+    }
+    else{
+      return overview
+    }
+  }
+  
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -103,14 +113,14 @@ const ShowDetails = ({ show }) => {  // Don't miss this!
               Overview of Season
             </Typography>
           
-              <Typography variant="h9" component="p">
+              <Typography variant="subtitle2" component="p">
                 <p><b>Episode Count: </b>{g.episode_count}
                 <br></br><b>Air Date: </b></p>{g.air_date}
             
               </Typography>
            
-            <Typography variant="h9" component="p">
-              <p>{g.overview}</p>
+            <Typography variant="subtitle2" component="p">
+              <p>{handleOverview(g.overview)}</p>
             </Typography>
             </li>
             

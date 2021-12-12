@@ -17,7 +17,10 @@ const HomePage = (props) => {
     return <h1>{error.message}</h1>
   }  
   const movies = data.results;
-
+  console.log(movies)
+  const handleScroll = () => {
+    
+  }
   return (
     <PageTemplate
       title="Discover Movies"

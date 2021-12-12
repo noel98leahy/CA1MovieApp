@@ -32,6 +32,7 @@ const SiteHeader = ( { history }) => {
     { label: "Favorites Movies", path: "/movies/favorites" },
     { label: "Upcoming Movies", path: "/movies/upcoming" },
     { label: "TV Shows", path: "/shows" },
+    { label:  "Popular Shows", path: "/shows/popular"}
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -50,7 +51,7 @@ const SiteHeader = ( { history }) => {
             TMDB Client
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            All you ever wanted to know about Movies!
+            All you ever wanted to know about Movies and TV Shows!
           </Typography>
             {isMobile ? (
               <>

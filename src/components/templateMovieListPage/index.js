@@ -35,6 +35,7 @@ function MovieListPageTemplate({ movies, title, action }) {
     <Grid container className={classes.root}>
       <Grid item xs={12}>
         <Header title={title} />
+
       </Grid>
       <Grid item container spacing={5}>
         <Grid key="find" item xs={12} sm={6} md={4} lg={3} xl={2}>
@@ -45,8 +46,10 @@ function MovieListPageTemplate({ movies, title, action }) {
           />
         </Grid>
         <MovieList action={action} movies={displayedMovies}></MovieList>
+        
       </Grid>
     </Grid>
+    
   );
 }
 export default MovieListPageTemplate;

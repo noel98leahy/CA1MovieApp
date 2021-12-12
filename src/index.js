@@ -14,6 +14,8 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import TvPage from './pages/tvPages';
 import TvDetailsPage from './pages/tvDetailsPage';
+import TvNewShowsPage from './pages/newTvShowsPage';
+import CreditPage from './pages/creditPage';
 
 
 
@@ -43,9 +45,16 @@ const App = () => {
       <Route path="/reviews/:id" component={MovieReviewPage} />
       <Route exact path="/" component={HomePage} />
       <Route exact path="/movies/:id" component={MoviePage} />
+      {/* <Route exact path="/movies/:id/credits" component={CreditPage} /> */}
+      
+      
       <Route exact path="/shows" component={TvPage}/>
+      <Route path="/shows/popular" component={TvNewShowsPage}/>
+
+
       <Route exact path="/shows/:id" component={TvDetailsPage} />
       <Route path="/tvReviews/:id" component={TVReviewPage} />
+      
       <Redirect from="*" to="/" />
       </Switch>
       </MoviesContextProvider>

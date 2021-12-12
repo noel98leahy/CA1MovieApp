@@ -1,13 +1,13 @@
 import React from "react";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
-import { getTVShows } from "../api/tmdb-api";
+import { getNewTVShows } from "../api/tmdb-api";
 import PageTemplate from "../components/templateTvListPage";
 
-const TvPage = () => {
-  const {  data, error, isLoading, isError }  = useQuery('shows', getTVShows)
+const TvNewShowsPage = (props) => {
+  const {  data, error, isLoading, isError }  = useQuery('popular', getNewTVShows)
 
-
+  console.log(data)
   if (isLoading) {
     return <Spinner />
   }
@@ -16,7 +16,8 @@ const TvPage = () => {
     return <h1>{error.message}</h1>
   }  
   const shows = data.results;
-  console.log(shows);
+  console.log(shows)
+
 
   // Redundant, but necessary to avoid app crashing.
   const tvFavorites = shows.filter(m => m.favorite)
@@ -24,10 +25,10 @@ const TvPage = () => {
 
   return (
     <PageTemplate
-      title="Tv Shows"
+      title="Popular TV Shows"
       shows={shows}
     />
   );
 };
 
-export default TvPage;
+export default TvNewShowsPage;

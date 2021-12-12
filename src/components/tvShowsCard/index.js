@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   media: { height: 500 },
 });
 
-export default function TvCard({ show, action }) {
+export default function TvCard({ show }) {
   const classes = useStyles();
 
   return (

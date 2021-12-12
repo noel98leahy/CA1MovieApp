@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import ShowDetails from "../components/tvDetails";
 import PageTemplate from "../components/templateTvPage";
-import { getSeasons } from "../api/tmdb-api";
 import { getShow } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'

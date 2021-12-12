@@ -9,6 +9,7 @@ import AddToPlaylistIcon from '../components/cardIcons/addToPlaylist';
 const UpcomingMoviePage = (props) => {
   const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpComingMovies)
 
+  console.log(data)
   if (isLoading) {
     return <Spinner />;
   }
@@ -18,8 +19,9 @@ const UpcomingMoviePage = (props) => {
   }
 
   const movies = data.results;
-  //const favorites = movies.filter(m => m.favorite)
- // localStorage.setItem('favorites', JSON.stringify(favorites))
+  console.log(movies)
+  const favorites = movies.filter(m => m.favorite)
+ localStorage.setItem('favorites', JSON.stringify(favorites))
 
  
 
