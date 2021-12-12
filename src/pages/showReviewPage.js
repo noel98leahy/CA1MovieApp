@@ -4,7 +4,7 @@ import PageTemplate from "../components/templateTvPage";
 
 
 const MovieReviewPage = (props) => {
-  const {show, review} = props.location.state
+  const {show} = props.location.state
   return (
     <PageTemplate show={show}>
       

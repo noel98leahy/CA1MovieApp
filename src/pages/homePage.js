@@ -18,9 +18,7 @@ const HomePage = (props) => {
   }  
   const movies = data.results;
   console.log(movies)
-  const handleScroll = () => {
-    
-  }
+
   return (
     <PageTemplate
       title="Discover Movies"

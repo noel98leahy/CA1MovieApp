@@ -36,7 +36,7 @@ const ShowDetails = ({ show }) => {  // Don't miss this!
 
 
   const handleOverview = (overview) => {
-    if(overview.trim() == ""){
+    if(overview.trim() === ""){
       return "No Overview was given"
     }
     else{
