@@ -45,7 +45,7 @@ const App = () => {
       <Route path="/reviews/:id" component={MovieReviewPage} />
       <Route exact path="/" component={HomePage} />
       <Route exact path="/movies/:id" component={MoviePage} />
-      {/* <Route exact path="/movies/:id/credits" component={CreditPage} /> */}
+      <Route exact path="/movies/:id/credits" component={CreditPage} />
       
       
       <Route exact path="/shows" component={TvPage}/>

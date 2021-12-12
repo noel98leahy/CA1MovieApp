@@ -10,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews"
+import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
     bottom: theme.spacing(2),
     right: theme.spacing(2),
   },
+  button: {
+    justifyContent: "center",
+    display: "flex",
+  }
 }));
 
 const MovieDetails = ({ movie }) => {  // Don't miss this!
@@ -44,7 +50,15 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         {movie.overview}
       </Typography>
 
+      <Link to={`/movies/${movie.id}/credits`}>
+      <Button variant="outlined" size="medium" color="primary" className={classes.button}>
+          Credits
+        </Button>
+        </Link>
       <Paper component="ul" className={classes.root}>
+      
+       
+      
         <li>
           <Chip label="Genres" className={classes.chip} color="primary" />
         </li>
