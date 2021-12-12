@@ -34,7 +34,7 @@ const Credits = ({ credits }) => {  // Don't miss this!
     <>
       <li>
           <Paper component="ul" className={classes.root}>
-              hello
+              
           </Paper>
       </li>
     </>
