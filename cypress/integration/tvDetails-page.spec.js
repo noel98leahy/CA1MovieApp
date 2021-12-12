@@ -38,5 +38,12 @@ describe("Movie Details Page", () => {
     it("should display the posters on the left", () => {
       cy.get("img").should('be.visible').should("have.css", "left")
     });
+    it("should display the show's seasons details", () => {
+        cy.get("b").contains("Episode Count: ");
+
+
+    })
+
+
   });
 });

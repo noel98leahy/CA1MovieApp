@@ -109,7 +109,7 @@ const ShowDetails = ({ show }) => {  // Don't miss this!
         {show.seasons.map((g) => (
         <><li key={g.name}>
             <Chip label={g.name} className={classes.chip} color="primary" />
-            <Typography variant="h6" component="h3">
+            <Typography variant="h6" component="h6">
               Overview of Season
             </Typography>
           
